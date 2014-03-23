@@ -2,7 +2,7 @@
 /**
  * Static content controller.
  *
- * This file will render views from views/pages/
+ * This file will render views from /Views/Pages/
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)

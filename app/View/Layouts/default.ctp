@@ -1,61 +1,87 @@
 <?php
 /**
- *
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * Default layout file for
  */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$app_name = __('PenguinApp');
+$client = __('360 Solutions');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
+		<?php echo $title_for_layout . " | " . $client . " on " . $app_name; ?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('cake.generic');
-
 		echo $this->fetch('meta');
+
+		echo $this->Html->css(array(
+			'bootstrap.min',
+			'londinium-theme',
+			'styles',
+			'icons',
+			'http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext'
+		));
 		echo $this->fetch('css');
-		echo $this->fetch('script');
 	?>
 </head>
-<body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
+<body class="sidebar-wide">
 
-			<?php echo $this->Session->flash(); ?>
+	<?php echo $this->element('navbar'); ?>
 
+	<?php echo $this->Session->flash(); ?>
+
+	<div class="page-container">
+
+		<?php echo $this->element('sidebar'); ?>
+
+		<div class="page-content">
 			<?php echo $this->fetch('content'); ?>
+
+			<!-- Footer -->
+			<div id="footer" class="footer clearfix">
+				<div class="pull-left">&copy; 2014. <?php echo $client; ?> on <?php echo $app_name ?> by <a href="http://www.kyleobrien.co.za" target="_blank" >Kyle O'Brien</a></div>
+			</div>
+			<!-- /footer -->
 		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
+
+
+
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+
+	<?php
+		echo $this->Html->script(array(
+			'//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js',
+			'//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+			'plugins/charts/sparkline.min',
+			'plugins/forms/uniform.min',
+			'plugins/forms/select2.min',
+			'plugins/forms/inputmask.js',
+			'plugins/forms/autosize.js',
+			'plugins/forms/inputlimit.min',
+			'plugins/forms/listbox',
+			'plugins/forms/multiselect',
+			'plugins/forms/validate.min',
+			'plugins/forms/tags.min',
+			'plugins/forms/switch.min',
+			'plugins/forms/uploader/plupload.full.min',
+			'plugins/forms/uploader/plupload.queue.min',
+			'plugins/forms/wysihtml5/wysihtml5.min',
+			'plugins/forms/wysihtml5/toolbar',
+			'plugins/interface/daterangepicker',
+			'plugins/interface/fancybox.min',
+			'plugins/interface/moment',
+			'plugins/interface/jgrowl.min',
+			'plugins/interface/datatables.min',
+			'plugins/interface/colorpicker',
+			'plugins/interface/fullcalendar.min',
+			'plugins/interface/timepicker.min',
+			'plugins/interface/collapsible.min',
+			'bootstrap.min',
+			'application'
+		));
+		echo $this->fetch('script');
+	?>
 </body>
 </html>
