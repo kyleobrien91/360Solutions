@@ -1,5 +1,5 @@
 <!-- Footer -->
 <div id="footer" class="footer clearfix">
-    <div class="pull-left">&copy; 2014. <?php echo $client; ?> on <?php echo $app_name ?> by <a href="http://www.kyleobrien.co.za" target="_blank" >Kyle O'Brien</a></div>
+    <div class="pull-left">&copy; <?php echo date('Y'); ?>. <?php echo CLIENT_NAME; ?> on <?php echo APP_NAME ?> by <a href="http://www.kyleobrien.co.za" target="_blank" >Kyle O'Brien</a></div>
 </div>
 <!-- /footer -->

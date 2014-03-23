@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <div class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
-        <a class="navbar-brand" href="#"><?php echo CLIENT_NAME; ?></a>
+        <a class="navbar-brand" href="/"><?php echo CLIENT_NAME; ?></a>
         <a class="sidebar-toggle"><i class="icon-paragraph-justify2"></i></a>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-icons">
             <span class="sr-only">Toggle navbar</span>
