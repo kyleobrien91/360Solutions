@@ -105,3 +105,17 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+/**
+ * Application constants
+ */
+
+if(!defined('APP_NAME'))
+{
+    define('APP_NAME', 'PenguinApp');
+}
+
+if(!defined('CLIENT_NAME'))
+{
+    define('CLIENT_NAME', '360 Solutions');
+}

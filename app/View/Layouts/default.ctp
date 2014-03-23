@@ -39,11 +39,7 @@ $client = __('360 Solutions');
 		<div class="page-content">
 			<?php echo $this->fetch('content'); ?>
 
-			<!-- Footer -->
-			<div id="footer" class="footer clearfix">
-				<div class="pull-left">&copy; 2014. <?php echo $client; ?> on <?php echo $app_name ?> by <a href="http://www.kyleobrien.co.za" target="_blank" >Kyle O'Brien</a></div>
-			</div>
-			<!-- /footer -->
+			<?php echo $this->element('footer'); ?>
 		</div>
 
 
